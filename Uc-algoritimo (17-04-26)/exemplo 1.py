@@ -1,0 +1,1 @@
+print("Hello, World! Por que o programador errou? Porque esqueceu o ;")
