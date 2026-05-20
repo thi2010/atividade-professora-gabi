@@ -1,0 +1,44 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+
+    return """
+    <h2>Cadastro</h2>
+
+    <form action="/dados" method="GET">
+
+    Digite seu nome:
+    <input type="text" name="usuario">
+
+    <br><br>
+
+    Digite sua cidade:
+    <input type="text" name="cidade">
+
+    <br><br>
+
+    <input type="submit" value="Mostrar">
+
+    </form>
+    
+
+
+@app.route("/dados")
+def dados():
+
+    usuario = request.args.get("usuario")
+    cidade = request.args.get("cidade")
+
+    return f"""
+    <h1>Informações</h1>
+
+    <p>Nome: {usuario}</p>
+
+    <p>Cidade: {cidade}</p>
+    """
+
+
+app.run(debug=True)
