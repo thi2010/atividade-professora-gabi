@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="{{ tema }}">
+
+<h1>Preferências do Usuário</h1>
+
+<p>Olá {{ nome if nome else 'Visitante' }}</p>
+
+<form action="/salvar" method="post">
+    <input type="text" name="nome" placeholder="Seu nome">
+    <button>Salvar</button>
+</form>
+
+<a href="/tema/claro">Claro</a>
+<a href="/tema/escuro">Escuro</a>
+
+</body>
+</html>

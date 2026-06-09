@@ -1,0 +1,14 @@
+body{
+    text-align:center;
+    font-family:Arial;
+}
+
+.claro{
+    background:white;
+    color:black;
+}
+
+.escuro{
+    background:black;
+    color:white;
+}
