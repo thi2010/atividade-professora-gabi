@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Área Restrita</h1>
+    {# Mensagem personalizada com o nome do usuário #}
+    <p>Olá, <strong>{{ usuario }}</strong>! Você está autenticado com sucesso.</p>
+    
+    <hr>
+    <a href="{{ url_for('logout') }}">Sair (Logout)</a>
+</body>
+</html>
