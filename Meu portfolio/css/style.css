@@ -1,0 +1,284 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101010;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    background: #080808;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    color: #00ff66;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #00ff66;
+}
+
+button, .botao {
+    background: #00ff66;
+    color: black;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .botao:hover {
+    background: #00cc55;
+}
+
+#menu-btn {
+    display: none;
+}
+
+section {
+    padding: 60px 10%;
+    scroll-margin-top: 20px;
+}
+
+section h2 {
+    color: #00ff66;
+    margin-bottom: 20px;
+}
+
+.inicio {
+    min-height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.inicio h1 {
+    font-size: 40px;
+}
+
+.inicio img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid #00ff66;
+    border-radius: 50%;
+}
+
+.inicio p {
+    margin-bottom: 20px;
+}
+
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.habilidades span {
+    background: #1c1c1c;
+    border: 1px solid #00ff66;
+    padding: 12px 20px;
+    border-radius: 6px;
+}
+
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.projeto {
+    background: #1c1c1c;
+    border: 1px solid #00ff66;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.projeto h3 {
+    color: #00ff66;
+    margin-bottom: 10px;
+}
+
+.projeto p {
+    margin-bottom: 10px;
+}
+
+form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #1c1c1c;
+    color: white;
+    border: 1px solid #00ff66;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.consentimento {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.consentimento input {
+    width: auto;
+    margin-top: 6px;
+}
+
+#retorno {
+    color: #00ff66;
+}
+
+footer {
+    background: #080808;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #00ff66;
+    text-decoration: none;
+}
+
+/* Links do e-mail e GitHub em verde */
+#contato a,
+#contato a:visited {
+    color: #00ff66;
+    text-decoration: none;
+}
+
+#contato a:hover {
+    color: #00cc55;
+    text-decoration: underline;
+}
+
+/* Tema claro */
+body.claro {
+    background: #f2f2f2;
+    color: #171717;
+}
+
+body.claro header,
+body.claro footer {
+    background: #dddddd;
+}
+
+body.claro nav a,
+body.claro footer a {
+    color: #171717;
+}
+
+body.claro .projeto,
+body.claro .habilidades span,
+body.claro input,
+body.claro textarea {
+    background: white;
+    color: #171717;
+}
+
+body.claro section h2,
+body.claro .projeto h3,
+body.claro .logo,
+body.claro #retorno {
+    color: #087a35;
+}
+
+body.claro #contato a,
+body.claro #contato a:visited {
+    color: #087a35;
+}
+
+/* Adaptação para celular */
+@media (max-width: 700px) {
+    header {
+        flex-wrap: wrap;
+        padding: 15px 5%;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        order: 4;
+    }
+
+    nav.aberto {
+        display: flex;
+    }
+
+    nav a {
+        padding: 8px;
+    }
+
+    section {
+        padding: 40px 6%;
+    }
+
+    .inicio {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .inicio h1 {
+        font-size: 32px;
+    }
+
+    .projetos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Navegação por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}

@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiago | Portfólio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+
+    <style>
+        #contato .link-contato {
+            display: block;
+            color: #00ff66;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 10px 0 25px;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        #contato .link-contato:hover {
+            color: #00cc55;
+            text-decoration: underline;
+        }
+
+        #contato .tipo-contato {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#inicio" class="logo">Thiago.dev</a>
+
+        <button id="menu-btn" aria-label="Abrir menu"
+                aria-expanded="false">☰</button>
+
+        <nav id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <button id="tema-btn" aria-label="Ativar tema claro">☀️</button>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="inicio">
+            <div>
+                <p id="saudacao">Olá, seja bem-vindo!</p>
+                <h1>Eu sou o Thiago</h1>
+                <h2>Desenvolvedor Back-end</h2>
+
+                <p>
+                    Sou estudante de programação e estou sempre
+                    buscando aprender coisas novas. Gosto de
+                    desenvolver projetos, testar códigos e descobrir
+                    como os sistemas funcionam. Meu objetivo é
+                    melhorar minhas habilidades e crescer
+                    profissionalmente na área de tecnologia.
+                </p>
+
+                <a href="#projetos" class="botao">Ver projetos</a>
+            </div>
+
+            <img src="img/avatar.png" alt="Avatar do Thiago">
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre mim</h2>
+
+            <p>
+                Meu nome é Thiago e sou estudante de programação.
+                Tenho interesse na área de desenvolvimento back-end,
+                principalmente na criação de sistemas e no
+                funcionamento dos bancos de dados.
+            </p>
+
+            <p>
+                Durante o curso, estou aprendendo tecnologias como
+                Python, Flask, HTML, CSS, JavaScript e SQLite.
+                Também estou desenvolvendo projetos práticos para
+                colocar em uso o que aprendo nas aulas e ganhar
+                mais experiência.
+            </p>
+
+            <p>
+                Ainda estou no começo da minha jornada na programação,
+                mas quero continuar estudando, melhorar meus
+                conhecimentos e aprender a resolver problemas usando
+                a tecnologia. Meu objetivo é conseguir uma
+                oportunidade de estágio, adquirir experiência
+                profissional e me tornar um desenvolvedor back-end
+                cada vez melhor.
+            </p>
+        </section>
+
+        <section id="habilidades">
+            <h2>Minhas habilidades</h2>
+
+            <div class="habilidades">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>SQLite</span>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <h2>Meus projetos</h2>
+
+            <div class="projetos">
+                <article class="projeto">
+                    <h3>FoodExpress</h3>
+                    <p>
+                        Site de delivery criado para praticar
+                        páginas web e rotas utilizando Flask.
+                    </p>
+                    <p>Tecnologias: Python, Flask e HTML.</p>
+                </article>
+
+                <article class="projeto">
+                    <h3>Sistema de Biblioteca</h3>
+                    <p>
+                        Banco de dados para organizar livros,
+                        autores e leitores.
+                    </p>
+                    <p>Tecnologias: SQLite e SQL.</p>
+                </article>
+
+                <article class="projeto">
+                    <h3>Cadastro de Alunos</h3>
+                    <p>
+                        Sistema para cadastrar informações
+                        de alunos e validar campos.
+                    </p>
+                    <p>Tecnologias: Python e Flask.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Entre em contato</h2>
+
+            <p class="tipo-contato">Meu e-mail</p>
+            <a class="link-contato"
+               href="mailto:thiagocdebrito2010@gmail.com">
+                thiagocdebrito2010@gmail.com
+            </a>
+
+            <p class="tipo-contato">Meu GitHub</p>
+            <a class="link-contato"
+               href="https://github.com/thiagocarvalho"
+               target="_blank"
+               rel="noopener noreferrer">
+                github.com/thiagocarvalho
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© <span id="ano"></span> Thiago.dev</p>
+        <a href="#inicio">Voltar ao topo ↑</a>
+    </footer>
+
+</body>
+</html>
