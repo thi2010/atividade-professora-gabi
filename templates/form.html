@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ action }} filme{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <h1>{{ action }} filme</h1>
+
+    <form method="post">
+      <div class="field">
+        <label for="titulo">Título</label>
+        <input id="titulo" name="titulo" type="text" value="{{ filme['titulo'] if filme else '' }}" required />
+      </div>
+
+      <div class="field">
+        <label for="genero">Gênero</label>
+        <input id="genero" name="genero" type="text" value="{{ filme['genero'] if filme else '' }}" required />
+      </div>
+
+      <div class="field">
+        <label for="ano">Ano de lançamento</label>
+        <input id="ano" name="ano" type="number" min="1900" max="2100" value="{{ filme['ano'] if filme else '' }}" required />
+      </div>
+
+      <div class="field">
+        <label for="nota">Nota (1 a 10)</label>
+        <input id="nota" name="nota" type="number" min="1" max="10" step="0.1" value="{{ filme['nota'] if filme else '' }}" required />
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

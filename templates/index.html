@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Catálogo de Filmes{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <h1>Catálogo de Filmes</h1>
+    <p>Gerencie o seu acervo de filmes.</p>
+    <a href="{{ url_for('novo_filme') }}" class="btn btn-primary">Cadastrar novo filme</a>
+
+    {% if filmes %}
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Gênero</th>
+            <th>Ano</th>
+            <th>Nota</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for filme in filmes %}
+            <tr>
+              <td>{{ filme['titulo'] }}</td>
+              <td>{{ filme['genero'] }}</td>
+              <td>{{ filme['ano'] }}</td>
+              <td>{{ filme['nota'] }}</td>
+              <td class="actions">
+                <a href="{{ url_for('editar_filme', id=filme['id']) }}" class="btn btn-secondary">Editar</a>
+                <form action="{{ url_for('excluir_filme', id=filme['id']) }}" method="post" style="display: inline;">
+                  <button type="submit" class="btn btn-danger" onclick="return confirm('Deseja realmente excluir este filme?')">Excluir</button>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <div class="empty">
+        <p>Nenhum filme cadastrado ainda.</p>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
