@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de paciente{% endblock %}
+
+{% block content %}
+
+<section class="formulario">
+    <h1>
+        {% if paciente %}
+            Editar paciente
+        {% else %}
+            Novo paciente
+        {% endif %}
+    </h1>
+
+    <form method="POST">
+
+        <label>Nome completo</label>
+        <input
+            type="text"
+            name="nome"
+            required
+            value="{{ paciente.nome if paciente else '' }}"
+        >
+
+        <label>Telefone</label>
+        <input
+            type="text"
+            name="telefone"
+            required
+            value="{{ paciente.telefone if paciente else '' }}"
+        >
+
+        <label>E-mail</label>
+        <input
+            type="email"
+            name="email"
+            value="{{ paciente.email if paciente else '' }}"
+        >
+
+        <label>Data de nascimento</label>
+        <input
+            type="date"
+            name="data_nascimento"
+            value="{{ paciente.data_nascimento if paciente else '' }}"
+        >
+
+        <button type="submit" class="botao">
+            Salvar paciente
+        </button>
+
+        <a href="/" class="botao secundario">Voltar</a>
+
+    </form>
+</section>
+<link rel="stylesheet" href="style.css">
+{% endblock %}

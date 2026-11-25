@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Painel | MedTech Saúde{% endblock %}
+
+{% block content %}
+
+<section class="cabecalho">
+    <div>
+        <h1>Painel do consultório</h1>
+        <p>Gerenciamento de pacientes e consultas.</p>
+    </div>
+
+    <a href="{{ url_for('nova_consulta') }}" class="botao">
+        + Nova consulta
+    </a>
+</section>
+
+<section class="cards">
+    <div class="card">
+        <h3>Pacientes</h3>
+        <strong>{{ pacientes|length }}</strong>
+    </div>
+
+    <div class="card">
+        <h3>Consultas</h3>
+        <strong>{{ consultas|length }}</strong>
+    </div>
+</section>
+
+<section class="painel">
+    <div class="titulo-secao">
+        <h2>Pacientes cadastrados</h2>
+        <a href="{{ url_for('novo_paciente') }}" class="botao">
+            + Cadastrar paciente
+        </a>
+    </div>
+
+    <form method="GET" class="busca">
+        <input
+            type="text"
+            name="q"
+            placeholder="Buscar paciente pelo nome"
+            value="{{ termo }}"
+        >
+        <button class="botao">Buscar</button>
+    </form>
+
+    <div class="tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for p in pacientes %}
+                <tr>
+                    <td>{{ p.nome }}</td>
+                    <td>{{ p.telefone }}</td>
+                    <td>{{ p.email or "Não informado" }}</td>
+                    <td>
+                        <a href="{{ url_for('editar_paciente', id=p.id) }}">
+                            Editar
+                        </a>
+
+                        <form method="POST"
+                              action="{{ url_for('excluir_paciente', id=p.id) }}"
+                              class="form-inline"
+                              onsubmit="return confirm('Deseja excluir este paciente?')">
+                            <button class="excluir">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">Nenhum paciente cadastrado.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="painel">
+    <h2>Consultas agendadas</h2>
+
+    <div class="tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>Paciente</th>
+                    <th>Data</th>
+                    <th>Horário</th>
+                    <th>Especialidade</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for c in consultas %}
+                <tr>
+                    <td>{{ c.paciente_nome }}</td>
+                    <td>{{ c.data_consulta }}</td>
+                    <td>{{ c.horario }}</td>
+                    <td>{{ c.especialidade }}</td>
+                    <td>{{ c.status }}</td>
+                    <td>
+                        <form method="POST"
+                              action="{{ url_for('alterar_status', id=c.id) }}"
+                              class="form-inline">
+                            <select name="status">
+                                <option>Agendada</option>
+                                <option>Concluída</option>
+                                <option>Cancelada</option>
+                            </select>
+                            <button>Salvar</button>
+                        </form>
+
+                        <form method="POST"
+                              action="{{ url_for('excluir_consulta', id=c.id) }}"
+                              class="form-inline">
+                            <button class="excluir">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6">Nenhuma consulta cadastrada.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<p class="api-info">
+    API disponível: /api/pacientes e /api/consultas
+</p>
+<link rel="stylesheet" href="style.css">
+{% endblock %}

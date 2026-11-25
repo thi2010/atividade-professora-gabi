@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #172b4d;
+}
+
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.topo {
+    background: white;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e6ef;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #155eef;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #344563;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.principal {
+    padding-top: 35px;
+    padding-bottom: 45px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.cabecalho,
+.titulo-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.cabecalho p {
+    color: #66758b;
+}
+
+.botao {
+    display: inline-block;
+    background: #155eef;
+    color: white;
+    border: none;
+    padding: 12px 17px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background: #1049bd;
+}
+
+.secundario {
+    background: #e7efff;
+    color: #155eef;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.card,
+.painel,
+.formulario {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e0e6ef;
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    color: #66758b;
+    margin-bottom: 12px;
+}
+
+.card strong {
+    font-size: 30px;
+    color: #155eef;
+}
+
+.busca {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd6e3;
+    border-radius: 7px;
+    margin: 7px 0 14px;
+    font-size: 14px;
+}
+
+.tabela {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e0e6ef;
+    text-align: left;
+}
+
+th {
+    background: #f5f8ff;
+    color: #66758b;
+}
+
+td a {
+    color: #155eef;
+    text-decoration: none;
+}
+
+.form-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-inline select {
+    width: auto;
+    margin: 0;
+}
+
+.form-inline button,
+.excluir {
+    border: none;
+    background: none;
+    color: #155eef;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.excluir {
+    color: #c03945;
+}
+
+.formulario {
+    max-width: 650px;
+    margin: auto;
+}
+
+.formulario form {
+    margin-top: 20px;
+}
+
+.formulario label {
+    display: block;
+    font-weight: bold;
+}
+
+.alerta {
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+}
+
+.sucesso {
+    background: #e8f7ef;
+    color: #176b40;
+}
+
+.erro {
+    background: #fff0f0;
+    color: #a22b35;
+}
+
+.api-info {
+    color: #66758b;
+    margin-top: 10px;
+}
+
+footer {
+    background: white;
+    padding: 22px;
+    text-align: center;
+    color: #66758b;
+    border-top: 1px solid #e0e6ef;
+}
+
+@media (max-width: 700px) {
+    .navegacao,
+    .cabecalho,
+    .titulo-secao {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .busca {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .painel {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MedTech Saúde{% endblock %}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+    <div class="container navegacao">
+        <a href="/" class="logo">✚ MedTech Saúde</a>
+
+        <nav>
+            <a href="/">Painel</a>
+            <a href="{{ url_for('novo_paciente') }}">Pacientes</a>
+            <a href="{{ url_for('nova_consulta') }}">Consultas</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container principal">
+
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+        {% for categoria, mensagem in mensagens %}
+            <div class="alerta {{ categoria }}">
+                {{ mensagem }}
+            </div>
+        {% endfor %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+</main>
+
+<footer>
+    <p>MedTech Saúde | Projeto acadêmico 2026</p>
+</footer>
+
+</body>
+</html>
